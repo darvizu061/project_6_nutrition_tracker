@@ -1,1 +1,1 @@
-## Not yet configured 
+## Not yet configured. 
