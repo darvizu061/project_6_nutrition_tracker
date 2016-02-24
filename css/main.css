@@ -1,0 +1,67 @@
+body{
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #262626;
+    width: 100%;
+    margin: 0%;
+}
+
+
+                /****ACTION SIDEBAR ****/
+#actionBar{
+    background-color: #ffff1a;
+    height: 100vh;
+    box-shadow: 2px 2px rgba(0,0,0,0.10);
+}
+#actionBar > h2{
+    color: white;
+    margin: 0;
+    padding: 20px 0;
+}
+#actionsList ul{
+    list-style-type: none;
+    padding-left: 20%;
+    font-size: 22px;
+    
+}
+/*for glyphs*/
+#actionsList span{
+    padding-right: 5px;
+}
+                /****DISPLAY CONTAINER ****/
+/*SEARCH DIV*/
+#searchDiv{
+    background-color: #666666;
+}
+#mainInput{
+    background-color: #666666;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+    border-color: black;
+    width: 70%;
+    margin: 25px 0;
+    color: white;
+    font-size: 35px;
+}
+#mainInput:focus {
+    outline: none;
+}
+/*FOOD LOG*/
+#foodLog{
+    background-color: white;
+    border-radius: 15px;
+    width:100%;
+    height: 600px;
+    margin-top: 30px;
+    
+}
+#foodLog > h3{
+    border-bottom: thin solid black;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin: 0 110px;
+}
+#foodLogDynamic{
+    width: 100%;
+    height: 460px;
+    overflow:scroll;
+}
