@@ -44,18 +44,27 @@ var NewEntryControl = Backbone.View.extend({
     el: '#newEntryCSS',
     events: {
         'click .actionButtonBackground': 'hideSearchBox',
-        'submit #searchFood': 'getInput'
+        'submit #searchFood': 'hideSearchBox'
     },
-    hideSearchBox: function(){
+    hideSearchBox: function(e){
+        getFoodSearchResult.getEntryInput(e);
         $('#newEntryCSS').addClass('hidden');
+    }
+    
+});
+var GetFoodSearchResult = Backbone.View.extend({
+    getSearchInput: function(e){
+        e.preventDefault();
+        var lookingFor = $('#mainInput input:first-child').val();
+        this.getResults(lookingFor);
     },
-    getInput: function(e){
+    getEntryInput: function(e){
         e.preventDefault();
         var lookingFor = $('#searchFood input:first-child').val();
         this.getResults(lookingFor);
         
         
-    }, 
+    },
     getResults: function(lookingFor){
         //empty collection
         holdSearchResults.reset();
@@ -78,21 +87,22 @@ var NewEntryControl = Backbone.View.extend({
             showSearchResults.render();
             }
         });
-        this.hideSearchBox();
     }
 });
 var ShowSearchResults = Backbone.View.extend({
-    el: '#resultsContainer',
+    el: '#searchDiv',
     events: {
-      'click button.btn-success': 'addToLog'  
+      'click button.btn-success': 'addToLog',
+      'submit #mainInput': 'getInput'
     },
     initialize: function(){
         _.bindAll(this, 'render');
+        this.resultsDiv = $('#resultsContainer');
         
         this.collection = holdSearchResults;
     },
     render: function(){
-        var element = $(this.el);
+        var element = this.resultsDiv;
         var results = this.collection.toJSON();
         var template = _.template($('#searchResultsTemplate').html());
         
@@ -122,6 +132,9 @@ var ShowSearchResults = Backbone.View.extend({
             })
         );
         
+    },
+    getInput: function(e){
+        getFoodSearchResult.getSearchInput(e);
     }
 });
 
@@ -193,6 +206,7 @@ var holdSearchResults = new HoldSearchResults();
 //instances of views 
 var buttonDisplay = new ButtonDisplay();
 var newEntryControl = new NewEntryControl();
+var getFoodSearchResult = new GetFoodSearchResult();
 var showSearchResults = new ShowSearchResults();
 var showFoodEntries = new ShowFoodEntries();
 

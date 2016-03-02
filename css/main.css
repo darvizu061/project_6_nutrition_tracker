@@ -75,7 +75,7 @@ body{
     margin: 0;
     
 }
-#mainInput{
+#mainInput input {
     background-color: #666666;
     border-width: 0 0 2px 0;
     border-style: solid;
