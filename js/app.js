@@ -1,7 +1,4 @@
-// ajax prefilter for easier ajax calls 
-// $.ajaxPrefilter(function( options, originalOptions, jqXHR){
-//     options.url = 'https://api.nutritionix.com/v1_1/search/' + options.url;
-// });
+//holds the traditional object format of all food items being returned and being stored in collections.
 var FoodAttributes = Backbone.Model.extend({
     defaults: {
         item_name: "",
@@ -10,7 +7,7 @@ var FoodAttributes = Backbone.Model.extend({
         nf_calories: null
     }
 });
-
+//collection below holds the url which we use to fetch data from the nutritionix api 
 var GetFoodObjects = Backbone.Collection.extend({
     initialize: function(models, options){
         this.id = options.id;
@@ -22,13 +19,15 @@ var GetFoodObjects = Backbone.Collection.extend({
         return response.hits;
     }
 });
+//collection below holds active food entries that will be displayed in the DOM
 var HoldFoodEntries = Backbone.Collection.extend({
     model: FoodAttributes
 });
+//collection below holds search results that will be displayed in the DOM
 var HoldSearchResults = Backbone.Collection.extend({
     model: FoodAttributes
 });
-
+//view below activates css for when user clicks on 'new entry' button
 var ButtonDisplay = Backbone.View.extend({
     
     el: '#actionsList',
@@ -39,19 +38,7 @@ var ButtonDisplay = Backbone.View.extend({
         $('#newEntryCSS').removeClass('hidden');
     }
 });
-
-var NewEntryControl = Backbone.View.extend({
-    el: '#newEntryCSS',
-    events: {
-        'click .actionButtonBackground': 'hideSearchBox',
-        'submit #searchFood': 'hideSearchBox'
-    },
-    hideSearchBox: function(e){
-        getFoodSearchResult.getEntryInput(e);
-        $('#newEntryCSS').addClass('hidden');
-    }
-    
-});
+//view below handles user submit events and requests fetch method to get food results from nutritionix api. Lastly stores the data in holdSearchResults
 var GetFoodSearchResult = Backbone.View.extend({
     getSearchInput: function(e){
         e.preventDefault();
@@ -89,6 +76,20 @@ var GetFoodSearchResult = Backbone.View.extend({
         });
     }
 });
+//view below listens to user submit event and launches GetFoodSearchResult.getEntryInput
+var NewEntryControl = Backbone.View.extend({
+    el: '#newEntryCSS',
+    events: {
+        'click .actionButtonBackground': 'hideSearchBox',
+        'submit #searchFood': 'hideSearchBox'
+    },
+    hideSearchBox: function(e){
+        getFoodSearchResult.getEntryInput(e);
+        $('#newEntryCSS').addClass('hidden');
+    }
+    
+});
+//view below is bind to holdSearchResults and rerenders itself when collection is modified 
 var ShowSearchResults = Backbone.View.extend({
     el: '#searchDiv',
     events: {
@@ -137,7 +138,7 @@ var ShowSearchResults = Backbone.View.extend({
         getFoodSearchResult.getSearchInput(e);
     }
 });
-
+//view below is bind to holdFoodEntries and rerenders itself when collection is modified. Also rerenders total calories 
 var ShowFoodEntries = Backbone.View.extend({
     el: '#foodLogDynamic',
     events: {
@@ -212,12 +213,17 @@ var ShowFoodEntries = Backbone.View.extend({
     
 });
 
+//router handler 
 var Router = Backbone.Router.extend({
     routes: {
         '': 'home'
         
     }
 });
+
+
+                            // BELOW ARE THE INSTANCES 
+
 
 
 //instances of collections
@@ -239,6 +245,9 @@ router.on('route:home', function(){
     // foodLogView.render();
 });
 
+
+
+//start backbone
 Backbone.history.start();
 
 
