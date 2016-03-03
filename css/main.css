@@ -125,8 +125,8 @@ body{
     height: 660px;
     overflow:scroll;
 }
-#foodLogDynamic li{
-    list-style-type: none;
-    font-size: 20px;
-    padding-top: 6px;
+#foodLogDynamic button{
+    margin-left: 20px;
+    /*padding: 0px 0px;*/
+    font-size: 10px;
 }

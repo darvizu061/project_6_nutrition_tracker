@@ -86,10 +86,13 @@
     <script id="entriesTemplate" type="text/html">
         <div class='row'>
             <div class='col-sm-9'>
-                <h4><%= item_name%></h4>
+                <h4 class='ItemName'><%= item_name%></h4>
             </div>
             <div class='col-sm-3'>
-                <h4><%= nf_calories%></h4>
+                <h4 class='ItemCalories'><%= nf_calories%></h4>
+            </div>
+            <div>
+                <button class='btn-danger'>Delete</button>
             </div>
         </div>
     </script>

@@ -140,6 +140,9 @@ var ShowSearchResults = Backbone.View.extend({
 
 var ShowFoodEntries = Backbone.View.extend({
     el: '#foodLogDynamic',
+    events: {
+        'click button.btn-danger': 'deleteEntry',
+    },
     initialize: function(){
         // get dynamic conatiner 
         this.counter = $('#calorieCounter h3');
@@ -149,19 +152,38 @@ var ShowFoodEntries = Backbone.View.extend({
         this.listenTo(this.collection,'add', this.render);
     },
     render: function(){
-        
-        //get last item added to collection 
-        var atributeObject = this.collection.at(-1).toJSON();
+        var self = this;
+        //empty element  
+        $(this.el).empty();
+        //get all items from collection
+        var atributeObject = this.collection.toJSON();
         //get template
         var template = _.template($('#entriesTemplate').html());
         
-        //call template function 'template' and pass atributeObject to fill in template. Append to el.
-        var itemHTML = template(atributeObject);
-        $(this.el).append(itemHTML);
+        _.each(atributeObject, function(item){
+            var itemHTML = template(item);
+            $(self.el).append(itemHTML);
+        });
         
-        //update calorie counter display 
+        //update counter
         this.updateCounter();
         
+    },
+    deleteEntry:  function(e){
+        // get 'grandparent' of button 
+        var foodDiv = e.currentTarget.parentNode.parentNode;
+        // get name of food item to delete 
+        var item_name = foodDiv.getElementsByClassName("ItemName")[0].textContent; 
+        //find food item in collection using findWhere to only bring ONE match. Using the where method would bring mutliple results if any.
+        var foodObject = holdFoodEntries.findWhere({item_name: item_name});
+        
+        //remove from collection 
+        holdFoodEntries.remove(foodObject);
+        
+        //update food log
+        this.render();
+        //update counter 
+        this.updateCounter();
     },
     updateCounter: function(){
         //get string of calories 
