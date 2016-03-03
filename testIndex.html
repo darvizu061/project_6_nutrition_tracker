@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Include bootstrap generic styling-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+    <style>
+    
+        body{
+            background-color: #f5f8fa;
+            font-family: 'Titillium Web', sans-serif;
+        }
+        container{
+            background-color: white;
+        }
+        /*ACTIONS ROW*/
+        .row1{
+            margin-top:10px;
+            background-color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 10px;
+        }
+        #newEntryButton{
+            width: 70px;
+            background-color: #ffe066;
+            border-radius: 5px;
+            border: none;
+            padding-top: 18px;
+            padding-bottom: 18px;
+        }
+        #newEntryButton  span{
+            font-size: 25px;
+        }
+            /*DISPLAY ROW*/
+        /*for both displays*/
+        .bigContainer{
+            -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
+            -moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
+            box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
+            padding: 0;
+            margin-top: 15px;
+        }
+        /*SEARCH RESULTS DISPLAY */
+        #searchDivTitleContainer{
+            background-color: #fffae6;
+            margin: 0;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+        #resultsContainer{
+            height: 600px;
+            background-color:white;
+            
+        }
+        /*FOOD ENTRIES DISPLAY*/
+        
+        #foodDivTitleContainer{
+            background-color: #fffae6;
+            margin: 0;
+            padding-top: 6px;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+        #foodDivTitleContainer p {
+            font-size: 26px;
+        }
+        #dynamicContainer{
+            background-color:white;
+            
+        }
+        #foodLogDynamic{
+            height: 550px;
+        }
+        #calorieCounter{
+            padding: 0 0 1px 14px;
+        }
+    </style>
+</head>
+<body>
+    <!--whole element to cover -->
+    <div id="screen"></div>
+    <!--ACTIONS ROW-->
+    <div class="container">
+        <div class="row row1">
+            <div class="col-xs-2 col-lg-1">
+                <button id="newEntryButton"><span class="glyphicon glyphicon-edit"></span></button>
+            </div>
+            <div class="col-xs-3">
+                <h3>track.ly</h3>
+            </div>
+            <div></div>
+        </div>
+        <!--ACTIONS ROW CLOSURE-->
+        
+        <!--DISPLAY ROW-->
+        <div class="row">
+            
+            <!--SEARCH RESULTS DISPLAY-->
+            <div class="col-sm-4 bigContainer">
+                <div class="row text-center" id="searchDivTitleContainer">
+                    <p>Search Results</p>
+                </div>
+                <!--dynamic div -->
+                <div id="resultsContainer">
+                            
+                </div>
+            </div>
+            <!--FOOD LOG DISPLAY-->
+            <div class="col-sm-7 col-sm-offset-1 bigContainer">
+                <div class="row text-center" id="foodDivTitleContainer">
+                    <p>Food Log</p>
+                </div>
+                <!--dynamic div -->
+                <div id="dynamicContainer">
+                    <div id="foodLogDynamic">
+                    
+                    </div>
+                    <div id="calorieCounter">
+                        <h3>Total Calories: </h3>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        
+        
+    </div>
+    
+    
+    
+    
+</body>
+</html>
