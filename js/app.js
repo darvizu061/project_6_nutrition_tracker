@@ -30,9 +30,9 @@ var HoldSearchResults = Backbone.Collection.extend({
 //view below activates css for when user clicks on 'new entry' button
 var ButtonDisplay = Backbone.View.extend({
     
-    el: '#actionsList',
+    el: '.row1',
     events: {
-        'click button#newEntry': 'renderSearchBox',
+        'click button#newEntryButton': 'renderSearchBox',
     },
     renderSearchBox: function(){
         $('#newEntryCSS').removeClass('hidden');
@@ -40,11 +40,6 @@ var ButtonDisplay = Backbone.View.extend({
 });
 //view below handles user submit events and requests fetch method to get food results from nutritionix api. Lastly stores the data in holdSearchResults
 var GetFoodSearchResult = Backbone.View.extend({
-    getSearchInput: function(e){
-        e.preventDefault();
-        var lookingFor = $('#mainInput input:first-child').val();
-        this.getResults(lookingFor);
-    },
     getEntryInput: function(e){
         e.preventDefault();
         var lookingFor = $('#searchFood input:first-child').val();
@@ -91,10 +86,9 @@ var NewEntryControl = Backbone.View.extend({
 });
 //view below is bind to holdSearchResults and rerenders itself when collection is modified 
 var ShowSearchResults = Backbone.View.extend({
-    el: '#searchDiv',
+    el: '#resultsContainer',
     events: {
-      'click button.btn-success': 'addToLog',
-      'submit #mainInput': 'getInput'
+      'click button.btn-success': 'addToLog'
     },
     initialize: function(){
         _.bindAll(this, 'render');
@@ -133,9 +127,6 @@ var ShowSearchResults = Backbone.View.extend({
             })
         );
         
-    },
-    getInput: function(e){
-        getFoodSearchResult.getSearchInput(e);
     }
 });
 //view below is bind to holdFoodEntries and rerenders itself when collection is modified. Also rerenders total calories 

@@ -1,34 +1,33 @@
 body{
     font-family: 'Titillium Web', sans-serif;
-    background-color: #262626;
-    width: 100%;
-    margin: 0%;
+    background-color: #f5f8fa;
+}
+container {
+            background-color: white;
 }
 
                 /****ACTION SIDEBAR ****/
-#actionBar{
-    background-color: #ffff1a;
-    height: 100vh;
-    box-shadow: 2px 2px rgba(0,0,0,0.10);
-}
-#actionBar > h2{
-    color: white;
-    margin: 0;
-    padding: 20px 0;
-}
-#actionsList ul{
-    list-style-type: none;
-    font-size: 19px;
-    margin: 0;
-    padding: 0;
-}
-#actionsList  button{
+/*ACTIONS ROW*/
+.row1{
+    margin-top:10px;
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-radius: 10px;
-    padding: 2px 12px 5px 9px;
+    -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
+    -moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
+    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
 }
-/*for glyphs*/
-#actionsList span{
-    padding-right: 5px;
+#newEntryButton{
+    width: 70px;
+    background-color: #ffe066;
+    border-radius: 5px;
+    border: none;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+#newEntryButton  span{
+    font-size: 25px;
 }
                 /****ACTION BUTTON DISPLAY  ****/
 /*foodOptionsTemp - Template*/
@@ -66,67 +65,47 @@ body{
     
 }
                 /****DISPLAY FOOD SEARCHES ****/
-/*INPUT DIV*/
-#searchDiv{
+/*for both displays*/
+.bigContainer{
+    -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
+    -moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
+    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
     padding: 0;
+    margin-top: 15px;
 }
-#mainInputContainer{
-    background-color: #666666;
+/*SEARCH RESULTS DISPLAY */
+#searchDivTitleContainer{
+    background-color: #fffae6;
     margin: 0;
-    
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
-#mainInput input {
-    background-color: #666666;
-    border-width: 0 0 2px 0;
-    border-style: solid;
-    border-color: black;
-    width: 70%;
-    margin: 25px 0 25px 10px;
-    color: white;
-    font-size: 35px;
-    padding-left:12px;
-}
-#mainInput:focus {
-    outline: none;
-}
-/*RESULTS DIV*/
 #resultsContainer{
-    background-color: #cccccc;
-    padding: 10px 30px;
-    height: 701px;
-    overflow:scroll;
+    height: 600px;
+    background-color:white;
     
 }
-#resultsContainer button{
-    margin-bottom: 10px;
+/*FOOD ENTRIES DISPLAY*/
+
+#foodDivTitleContainer{
+    background-color: #fffae6;
+    margin: 0;
+    padding-top: 6px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
-.foodOption{
-    border-bottom: thin solid black;
+#foodDivTitleContainer p {
+    font-size: 26px;
 }
-.foodOptionDetails{
-    padding-top: 10px;
-    padding-bottom: 5px;
-}
-                /****DISPLAY FOOD ENTRIES ****/
-/*FOOD LOG*/
-#foodLog{
-    background-color: white;
-    height:805px;
+#dynamicContainer{
+    background-color:white;
     
-}
-#foodLog > h3{
-    border-bottom: thin solid black;
-    padding-top: 14px;
-    padding-bottom: 14px;
-    margin: 0 110px;
 }
 #foodLogDynamic{
-    width: 100%;
-    height: 660px;
-    overflow:scroll;
+    height: 550px;
 }
-#foodLogDynamic button{
-    margin-left: 20px;
-    padding: 3px 7px 3px 6px;
-    font-size: 10px;
+#calorieCounter{
+    padding: 0 0 1px 14px;
 }
