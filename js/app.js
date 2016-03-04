@@ -52,6 +52,10 @@ var GetFoodSearchResult = Backbone.View.extend({
         holdSearchResults.reset();
         var results = new GetFoodObjects([], {id: lookingFor}); 
         results.fetch({
+            beforeSend: function(){
+                //display loading indicator 
+                showSearchResults.renderLoadingGIF();
+            },
             success: function(results){
                 
                 _.each(results.toJSON(), function(item){
@@ -100,6 +104,7 @@ var ShowSearchResults = Backbone.View.extend({
         this.collection = holdSearchResults;
     },
     render: function(){
+        
         var element = this.resultsDiv;
         var results = this.collection.toJSON();
         var template = _.template($('#searchResultsTemplate').html());
@@ -113,9 +118,15 @@ var ShowSearchResults = Backbone.View.extend({
     },
     renderError: function(){
         var element = this.resultsDiv;
+        //removes previous results and loading gif
         element.empty();
         
         element.append('<h4>Sorry! No item found</h4>');
+    },
+    renderLoadingGIF: function(){
+        //get loading div that's inside main el
+        var element = $('#loadingIcon');
+        element.removeClass('hidden');
     },
     addToLog: function(e){
         var element = this.resultsDiv;
