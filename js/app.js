@@ -88,7 +88,7 @@ var NewEntryControl = Backbone.View.extend({
 var ShowSearchResults = Backbone.View.extend({
     el: '#resultsContainer',
     events: {
-      'click button.btn-success': 'addToLog'
+      'click button.add': 'addToLog'
     },
     initialize: function(){
         _.bindAll(this, 'render');
@@ -133,7 +133,7 @@ var ShowSearchResults = Backbone.View.extend({
 var ShowFoodEntries = Backbone.View.extend({
     el: '#foodLogDynamic',
     events: {
-        'click button.btn-danger': 'deleteEntry',
+        'click button.delete': 'deleteEntry',
     },
     initialize: function(){
         // get dynamic conatiner 
