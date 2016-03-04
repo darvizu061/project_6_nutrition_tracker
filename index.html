@@ -16,8 +16,6 @@
     
 </head>
 <body>
-    <!--whole element to cover -->
-    <div id="screen"></div>
     <div class="container">
         
             <!-- actions container -->
@@ -63,21 +61,25 @@
         </div>
     
         
-    </div>
-    <!--hidden search new entry button css -->
-    <div class="hidden" id="newEntryCSS">
-        <div class="actionButtonBackground">
-        </div>
-        <div id='newEntryInput' class='text-center'>
-            <h3>Search For Food</h3>
-            <form id="searchFood">
-                <input type='text' placeholder='i.e mcdonalds'></input>
-                <input type="submit" value="Search">
-            </form>
+    
+        <!--hidden search new entry button css -->
+        <div class="hidden row" id="newEntryCSS">
+            
+                <div class="actionButtonBackground">
+                </div>
+                
+                <div id='newEntryInput' class='text-center col-xs-12 col-sm-8 col-sm-offset-1 col-md-6 col-md-offset-2 col-lg-4 col-lg-offset-3'>
+                    <h3>Search For Food</h3>
+                    <form id="searchFood">
+                        <input type='text' placeholder='i.e mcdonalds'></input>
+                        <input type="submit" value="Search">
+                    </form>
+                </div>
+            
+                
             
         </div>
     </div>
-    
     <!--food entries template-->
     <script id="entriesTemplate" type="text/html">
         <div class='row'>

@@ -48,11 +48,9 @@ container {
 }
 #newEntryInput{
     position:absolute;
-	left:30%;
 	top:30%;
     z-index:3;
-    width: 590px;
-    height: 285px;
+    height: 200px;
     background-color: #ffffb3;
     border-radius: 30px;
 }
