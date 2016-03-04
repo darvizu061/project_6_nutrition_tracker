@@ -1,128 +1,151 @@
-body{
-    font-family: 'Titillium Web', sans-serif;
-    background-color: #f5f8fa;
-}
-container {
-            background-color: white;
-}
+body {
+  font-family: 'Titillium Web', sans-serif;
+  background-color: #f5f8fa; }
 
-                /****ACTION SIDEBAR ****/
+container {
+  background-color: white; }
+
+/****ACTION SIDEBAR ****/
 /*ACTIONS ROW*/
-.row1{
-    margin-top:10px;
-    background-color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
-    -moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
-    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
-}
-#newEntryButton{
-    width: 70px;
-    background-color: #ffe066;
-    border-radius: 5px;
-    border: none;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.66);
-    -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.66);
-    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.66);
-}
-#newEntryButton  span{
-    font-size: 25px;
-}
-                /****ACTION BUTTON DISPLAY  ****/
+.row1 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.66);
+  -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.66);
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.66); }
+  @media screen and (max-width: 769px) {
+    .row1 {
+      padding-top: 14px;
+      padding-bottom: 5px;
+      margin-left: 0;
+      margin-right: 0; } }
+
+#newEntryButton {
+  width: 70px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background-color: #ffe066;
+  border-radius: 5px;
+  border: none;
+  -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.66);
+  -moz-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.66);
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.66); }
+  @media screen and (max-width: 769px) {
+    #newEntryButton {
+      width: 45px;
+      padding-top: 5px;
+      padding-bottom: 5px; } }
+  #newEntryButton span {
+    font-size: 25px; }
+    @media screen and (max-width: 769px) {
+      #newEntryButton span {
+        font-size: 20px; } }
+
+#appTitle h2 {
+  margin-top: 15px;
+  margin-left: 30px; }
+  @media screen and (max-width: 769px) {
+    #appTitle h2 {
+      margin-top: 0; } }
+
+/****ACTION BUTTON DISPLAY  ****/
 /*foodOptionsTemp - Template*/
-.actionButtonBackground{
-    background-color: black;	
-    -moz-opacity: 0.8;	
-    opacity:.8;	
-    filter: alpha(opacity=80);	
-    position:absolute;	
-    top:0;	
-    left:0;	
-    right:0;	
-    bottom:0;	
-    z-index:2;
-}
-#newEntryInput{
-    position:absolute;
-	top:30%;
-    z-index:3;
-    height: 200px;
-    background-color: #ffffb3;
-    border-radius: 30px;
-}
+.actionButtonBackground {
+  background-color: black;
+  -moz-opacity: 0.8;
+  opacity: .8;
+  filter: alpha(opacity=80);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2; }
+
+#newEntryInput {
+  position: absolute;
+  top: 30%;
+  z-index: 3;
+  height: 200px;
+  background-color: #ffffb3;
+  border-radius: 30px; }
+
 #newEntryInput > h3 {
-    color: black;
-    padding-top: 20px;
-    padding-bottom:20px;
-}
+  color: black;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
 #searchFood input:first-child {
-    width: 100%;
-    font-size: 22px;
-    padding-left: 10px;
-    
-}
-                /****DYNAMIC DISPLAYS ****/
+  width: 100%;
+  font-size: 22px;
+  padding-left: 10px; }
+
+#searchFood input:last-child {
+  margin-top: 10px; }
+
+/****DYNAMIC DISPLAYS ****/
 /*for both displays*/
-.bigContainer{
-    -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
-    -moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
-    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
-    padding: 0;
-    margin-top: 15px;
-}
+@media screen and (max-width: 769px) {
+  .row2 {
+    margin-left: 0;
+    margin-right: 0; } }
+
+.bigContainer {
+  -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.66);
+  -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.66);
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.66);
+  padding: 0;
+  margin-top: 15px; }
 
 /*SEARCH RESULTS DISPLAY */
-#searchDivTitleContainer{
-    background-color: #fffae6;
-    margin: 0;
-    padding-top: 12px;
-    padding-bottom: 12px;
-}
-#resultsContainer{
-    height: 600px;
-    background-color:white;
-    padding: 0 15px 15px;
-    overflow: scroll;
-    
-}
-/*FOOD ENTRIES DISPLAY*/
+#searchDivTitleContainer {
+  background-color: #fffae6;
+  margin: 0;
+  padding-top: 12px;
+  padding-bottom: 12px; }
 
-#foodDivTitleContainer{
-    background-color: #fffae6;
-    margin: 0;
-    padding-top: 6px;
-    
-}
-#foodDivTitleContainer p {
-    font-size: 26px;
-}
-#dynamicContainer{
-    background-color:white;
-    padding: 0 15px 15px;
-}
-#foodLogDynamic{
-    height: 550px;
-}
-#calorieCounter{
-    padding: 0 0 1px 14px;
-}
-                /************TEMPLATES***************/
+#resultsContainer {
+  height: 600px;
+  background-color: white;
+  padding: 0 15px 15px;
+  overflow: scroll; }
+
+/*FOOD ENTRIES DISPLAY*/
+#foodDivTitleContainer {
+  background-color: #fffae6;
+  margin: 0;
+  padding-top: 6px; }
+  #foodDivTitleContainer p {
+    font-size: 26px; }
+
+#dynamicContainer {
+  background-color: white;
+  padding: 0 15px 15px; }
+
+#foodLogDynamic {
+  height: 550px; }
+
+#calorieCounter {
+  padding: 0 0 1px 14px; }
+
+/************TEMPLATES***************/
 /*for both templates */
-.appButton{
-    margin-left: 15px;
-    border: none;
-    border-radius: 3px;
-    -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.66);
-    -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.66);
-    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.66);
-}
+.appButton {
+  margin-left: 15px;
+  border: none;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.66);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.66);
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.66); }
+
 /*SEARCH RESULTS TEMPLATE*/
-.foodOption button{
-    background-color: #40bf40;
-    margin-bottom: 25px;
-}
+.foodOption button {
+  background-color: #40bf40;
+  margin-bottom: 25px; }
+
 /*FOOD ENTRIES TEMPLATE*/
+
+/*# sourceMappingURL=main.css.map */
