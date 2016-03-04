@@ -67,7 +67,7 @@ container {
     padding-left: 10px;
     
 }
-                /****DISPLAY FOOD SEARCHES ****/
+                /****DYNAMIC DISPLAYS ****/
 /*for both displays*/
 .bigContainer{
     -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
@@ -83,8 +83,6 @@ container {
     margin: 0;
     padding-top: 12px;
     padding-bottom: 12px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
 }
 #resultsContainer{
     height: 600px;
@@ -99,8 +97,7 @@ container {
     background-color: #fffae6;
     margin: 0;
     padding-top: 6px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    
 }
 #foodDivTitleContainer p {
     font-size: 26px;
@@ -128,5 +125,6 @@ container {
 /*SEARCH RESULTS TEMPLATE*/
 .foodOption button{
     background-color: #40bf40;
+    margin-bottom: 25px;
 }
 /*FOOD ENTRIES TEMPLATE*/
