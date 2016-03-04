@@ -98,7 +98,7 @@ container {
   @media screen and (max-width: 769px){
       margin-left: 0;
       margin-right: 0;
-    }
+  }
 }
 .bigContainer{
     -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
@@ -137,9 +137,11 @@ container {
 #dynamicContainer{
     background-color:white;
     padding: 0 15px 15px;
+    
 }
 #foodLogDynamic{
     height: 550px;
+    overflow: scroll;
 }
 #calorieCounter{
     padding: 0 0 1px 14px;

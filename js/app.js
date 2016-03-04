@@ -66,7 +66,10 @@ var GetFoodSearchResult = Backbone.View.extend({
                     
                 });
             // By convention, in order to avoid spaghetti code, bacbone views shouldn't directly talk to each other. In this case, the view does talk directly to showSearchResults in order to avoid multiple rendering through an on('add') method that would otherwise have to be declared in ShowSearchResults to keep track of the holdSearchResults collection.
-            showSearchResults.render();
+                showSearchResults.render();
+            },
+            error: function(){
+                showSearchResults.renderError();
             }
         });
     }
@@ -108,7 +111,14 @@ var ShowSearchResults = Backbone.View.extend({
             element.append(itemHTML);
         });
     },
+    renderError: function(){
+        var element = this.resultsDiv;
+        element.empty();
+        
+        element.append('<h4>Sorry! No item found</h4>');
+    },
     addToLog: function(e){
+        var element = this.resultsDiv;
         // get 'grandparent' of button
         var foodDiv = e.currentTarget.parentNode.parentNode
         // get food attributes 
@@ -127,6 +137,8 @@ var ShowSearchResults = Backbone.View.extend({
             })
         );
         
+        //clear search results 
+        element.empty();
     }
 });
 //view below is bind to holdFoodEntries and rerenders itself when collection is modified. Also rerenders total calories 

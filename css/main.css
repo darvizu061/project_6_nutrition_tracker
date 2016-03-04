@@ -126,7 +126,8 @@ container {
   padding: 0 15px 15px; }
 
 #foodLogDynamic {
-  height: 550px; }
+  height: 550px;
+  overflow: scroll; }
 
 #calorieCounter {
   padding: 0 0 1px 14px; }
