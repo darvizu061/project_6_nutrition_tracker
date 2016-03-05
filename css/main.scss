@@ -1,6 +1,25 @@
+/*** CSS VARIABLES***/
+$background-color: #f5f8fa;
+//button color
+$primary-color: #ffe066;
+//new entry input background color 
+$secondary-color: #ffffb3;
+//title container color
+$tertiary-color: #fffae6;
+
+/***MEDIA QUARIES***/
+$on-xsmall-display: 769px;
+
+/***MIXINS***/
+@mixin box-shadow ($thickness){
+  -webkit-box-shadow: 0px 0px $thickness 0px rgba(0,0,0,0.66);
+  -moz-box-shadow: 0px 0px $thickness 0px rgba(0,0,0,0.66);
+  box-shadow: 0px 0px $thickness 0px rgba(0,0,0,0.66);
+}
+
 body{
     font-family: 'Titillium Web', sans-serif;
-    background-color: #f5f8fa;
+    background-color: $background-color;
 }
 container {
             background-color: white;
@@ -12,7 +31,7 @@ container {
     padding-top: 10px;
     padding-bottom: 10px;
     margin-top:10px;
-    @media screen and (max-width: 769px){
+    @media screen and (max-width: $on-xsmall-display){
       padding-top: 14px;
       padding-bottom: 5px;
       margin-left: 0;
@@ -21,25 +40,23 @@ container {
     
     background-color: white;
     border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
-    -moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
-    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
+    
+    @include box-shadow(1px);
 }
 #newEntryButton{
     width: 70px;
     padding-top: 18px;
     padding-bottom: 18px;
-    @media screen and (max-width: 769px){
+    @media screen and (max-width: $on-xsmall-display){
       width: 45px;
       padding-top: 5px;
       padding-bottom: 5px;
     }
-    background-color: #ffe066;
+    background-color: $primary-color;
     border-radius: 5px;
     border: none;
-    -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.66);
-    -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.66);
-    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.66);
+    
+    @include box-shadow(2px);
     span {
       font-size: 25px;
       @media screen and (max-width: 769px){
@@ -51,7 +68,7 @@ container {
 #appTitle h2{
     margin-top: 15px;
     margin-left: 30px;
-    @media screen and (max-width: 769px){
+    @media screen and (max-width: $on-xsmall-display){
       margin-top: 0;
     }
 }
@@ -74,7 +91,7 @@ container {
 	top:30%;
     z-index:3;
     height: 200px;
-    background-color: #ffffb3;
+    background-color: $secondary-color;
     border-radius: 30px;
 }
 #newEntryInput > h3 {
@@ -95,22 +112,21 @@ container {
                 /****DYNAMIC DISPLAYS ****/
 /*for both displays*/
 .row2{
-  @media screen and (max-width: 769px){
+  @media screen and (max-width: $on-xsmall-display){
       margin-left: 0;
       margin-right: 0;
   }
 }
 .bigContainer{
-    -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
-    -moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
-    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.66);
     padding: 0;
     margin-top: 15px;
+    
+    @include box-shadow(2px);
 }
 
 /*SEARCH RESULTS DISPLAY */
 #searchDivTitleContainer{
-    background-color: #fffae6;
+    background-color: $tertiary-color;
     margin: 0;
     padding-top: 12px;
     padding-bottom: 12px;
@@ -128,7 +144,7 @@ container {
 /*FOOD ENTRIES DISPLAY*/
 
 #foodDivTitleContainer{
-    background-color: #fffae6;
+    background-color: $tertiary-color;
     margin: 0;
     padding-top: 6px;
     
@@ -155,9 +171,8 @@ container {
     margin-left: 15px;
     border: none;
     border-radius: 3px;
-    -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.66);
-    -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.66);
-    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.66);
+    
+    @include box-shadow(3px);
 }
 /*SEARCH RESULTS TEMPLATE*/
 .foodOption button{
