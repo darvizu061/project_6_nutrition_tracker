@@ -111,7 +111,7 @@ container {
   padding-bottom: 12px; }
 
 #resultsContainer {
-  height: 600px;
+  height: 70vh;
   background-color: white;
   padding: 0 15px 15px;
   overflow: scroll; }
@@ -132,7 +132,7 @@ container {
   padding: 0 15px 15px; }
 
 #foodLogDynamic {
-  height: 550px;
+  height: 60vh;
   overflow: scroll; }
 
 #calorieCounter {

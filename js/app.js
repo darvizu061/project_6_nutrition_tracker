@@ -1,3 +1,15 @@
+// FIREBASE INSTALLATION
+
+
+
+
+
+
+
+
+
+
+
 //holds the traditional object format of all food items being returned and being stored in collections.
 var FoodAttributes = Backbone.Model.extend({
     defaults: {
