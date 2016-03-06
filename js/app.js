@@ -1,15 +1,3 @@
-// FIREBASE INSTALLATION
-
-
-
-
-
-
-
-
-
-
-
 //holds the traditional object format of all food items being returned and being stored in collections.
 var FoodAttributes = Backbone.Model.extend({
     defaults: {
@@ -33,7 +21,10 @@ var GetFoodObjects = Backbone.Collection.extend({
 });
 //collection below holds active food entries that will be displayed in the DOM
 var HoldFoodEntries = Backbone.Collection.extend({
-    model: FoodAttributes
+    model: FoodAttributes,
+    initialize: function(){
+        
+    }
 });
 //collection below holds search results that will be displayed in the DOM
 var HoldSearchResults = Backbone.Collection.extend({
@@ -79,6 +70,7 @@ var GetFoodSearchResult = Backbone.View.extend({
                             nf_calories: item.fields.nf_calories
                         })
                     );
+                    
                     
                 });
             // By convention, in order to avoid spaghetti code, bacbone views shouldn't directly talk to each other. In this case, the view does talk directly to showSearchResults in order to avoid multiple rendering through an on('add') method that would otherwise have to be declared in ShowSearchResults to keep track of the holdSearchResults collection.
@@ -191,6 +183,8 @@ var ShowFoodEntries = Backbone.View.extend({
             var itemHTML = template(item);
             $(self.el).append(itemHTML);
         });
+        
+        
         
         //update counter
         this.updateCounter();
